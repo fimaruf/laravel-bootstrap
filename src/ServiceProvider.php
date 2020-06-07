@@ -19,8 +19,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         }
 
         $this->loadViewsFrom(__DIR__ . "/../resources/views", 'laravel-bootstrap');
-        $finder = new Finder();
-        foreach ($finder->files()->in(__DIR__ . "/View/Components")->name('*.php') as $component) {
+
+        foreach ((new Finder())->files()->in(__DIR__ . "/View/Components")->name('*.php') as $component) {
             $cc = $component->getFilenameWithoutExtension();
             Blade::component(Str::kebab($cc), "Wovosoft\\LaravelBootstrap\\View\Components\\$cc");
         }
