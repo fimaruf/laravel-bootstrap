@@ -1,0 +1,50 @@
+{
+  "name": "wovosoft/laravel-bootstrap",
+  "description": "Laravel Bootstrap Blade Components",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "bootstrap",
+    "blade"
+  ],
+  "type": "library",
+  "authors": [
+    {
+      "name": "Narayan Adhikary",
+      "email": "narayanadhikary24@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "illuminate/support": "^7.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0",
+    "phpunit/phpunit": "^8.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Wovosoft\\LaravelBootstrap\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Wovosoft\\LaravelBootstrap\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "phpunit": "phpunit"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Wovosoft\\LaravelBootstrap\\ServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}

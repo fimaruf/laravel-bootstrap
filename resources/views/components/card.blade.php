@@ -1,0 +1,63 @@
+<div {{$attributes->merge(["class"=> join(" ", $classList)])}}>
+    @if($imgSrc)
+        <x-card-img
+            :src="$imgSrc"
+            :alt="$imgAlt"
+            :top="$imgTop"
+            :bottom="$imgBottom"
+            :start="$imgStart"
+            :left="$imgLeft"
+            :end="$imgEnd"
+            :right="$imgRight"
+            :height="$imgHeight"
+            :width="$imgWidth"
+        ></x-card-img>
+    @endif
+    @if($header)
+        <x-card-header
+            :tag="$headerTag"
+            :bg-variant="$headerBgVariant"
+            :border-variant="$headerBorderVariant"
+            :text-variant="$headerTextVariant"
+            :class="$headerClass">
+            {{$header}}
+        </x-card-header>
+    @endif
+    @if(!$noBody)
+        <x-card-body
+            :tag="$bodyTag"
+            :bg-variant="$bodyBgVariant"
+            :border-variant="$bodyBorderVariant"
+            :text-variant="$bodyTextVariant"
+            :class="$bodyClass"
+            :title-tag="$titleTag"
+            :title-class="$titleClass"
+            :sub-title-tag="$subTitleTag"
+            :sub-title-text-variant="$subTitleTextVariant"
+            :sub-title-class="$subTitleClass"
+        >
+            @if($title)
+                <x-slot name="title">
+                    {{$title}}
+                </x-slot>
+            @endif
+            @if($subTitle)
+                <x-slot name="subTitle">
+                    {{$subTitle}}
+                </x-slot>
+            @endif
+            {{$slot}}
+        </x-card-body>
+    @else
+        {{$slot}}
+    @endif
+    @if($footer)
+        <x-card-footer :bg-variant="$footerBgVariant"
+                       :text-variant="$footerTextVariant"
+                       :border-variant="$footerBorderVariant"
+                       :tag="$footerTag"
+                       :class="$footerClass">
+            {{$footer}}
+        </x-card-footer>
+    @endif
+</div>
