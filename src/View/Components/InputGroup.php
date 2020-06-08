@@ -64,6 +64,6 @@ class InputGroup extends Component
      */
     public function render()
     {
-        return view('components.input-group');
+        return view('laravel-bootstrap::components.input-group');
     }
 }
